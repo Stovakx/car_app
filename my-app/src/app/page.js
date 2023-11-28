@@ -1,12 +1,18 @@
+
 import Hero from "./components/hero/hero";
 import CustomFilter from "./components/customFilter/customFilter";
-import SearchBar from "./components/searchBar/serachBar";
+import SearchBar from "./components/searchBar/searchBar";
 import CarCard from "./components/carCard/carCard";
 import { fetchCars } from "./utils";
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({searchParams}) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel : searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+  });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-  
+
   return (
     <>
       <Hero />

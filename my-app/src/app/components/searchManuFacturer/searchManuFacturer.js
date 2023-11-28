@@ -7,10 +7,15 @@ import DriveEtaOutlinedIcon from "@mui/icons-material/DriveEtaOutlined";
 export default function SearchManufacturer({ manufacturer, setManufacturer }) {
   const [query, setQuery] = useState("");
 
-
   const manufacturersProps = {
     options: manufacturers,
     getOptionLabel: (option) => option.title || option,
+  };
+
+  const handleManufacturerChange = (event, newValue) => {
+    if (newValue) {
+      setManufacturer(newValue);
+    }
   };
 
   return (
@@ -23,7 +28,9 @@ export default function SearchManufacturer({ manufacturer, setManufacturer }) {
           {...manufacturersProps}
           className="w-32"
           value={manufacturer}
-          onChange={(e) => setQuery(e.target.value)}
+          inputValue={query}
+          onInputChange={(event, newInputValue) => setQuery(newInputValue)}
+          onChange={handleManufacturerChange}
           renderInput={(params) => (
             <TextField {...params} label={`car brand`} variant="standard" />
           )}
