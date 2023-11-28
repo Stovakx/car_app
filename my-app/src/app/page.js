@@ -5,9 +5,9 @@ import CarCard from "./components/carCard/carCard";
 import ShowMore from "./components/showMore/showMore";
 import { fetchCars } from "./utils";
 import { fuels, yearsOfProduction } from "./constants";
-import CustomButton from "./components/customButton/customButton";
 
 export default async function Home({ searchParams }) {
+
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -34,11 +34,11 @@ export default async function Home({ searchParams }) {
         </div>
         {!isDataEmpty ? (
           <section>
-            <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car} />
-              ))}
-            </div>
+          <div className="home__cars-wrapper">
+            {allCars?.map((car) => (
+              <CarCard car={car} />
+            ))}
+          </div>
             <ShowMore
               pageNumber={(searchParams.pageNumber || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}

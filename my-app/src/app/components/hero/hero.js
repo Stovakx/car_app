@@ -4,7 +4,14 @@ import CustomButton from "../customButton/customButton";
 import Image from "next/image";
 
 export default function Hero() {
-  const handleScroll = () => {};
+  const handleScroll = () => {
+    const discoverElement = document.getElementById('discover');
+    if(discoverElement){
+      discoverElement.scrollIntoView({
+        behavior:"smooth"
+      });
+    }
+  };
   return (
     <>
       <div className="hero">
