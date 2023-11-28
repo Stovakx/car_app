@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { manufacturers, yearsOfProduction } from "@/app/constants";
+import { manufacturers } from "@/app/constants";
 import DriveEtaOutlinedIcon from "@mui/icons-material/DriveEtaOutlined";
 
 export default function SearchManufacturer({ manufacturer, setManufacturer }) {
   const [query, setQuery] = useState("");
 
-/*   const filteredManufacturers =
-    query === ""
-      ? manufacturers
-      : manufacturers.filter((imte) =>
-          item
-            .toLowerCase()
-            .replace(/\s+/g, " ")
-            .includes(query.toLowerCase().replace(/\s+/g, " "))
-        ); */
+
   const manufacturersProps = {
     options: manufacturers,
     getOptionLabel: (option) => option.title || option,

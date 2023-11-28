@@ -93,8 +93,8 @@ export const manufacturers = [
       title: "Socials",
       links: [
         { title: "Discord", url: "/" },
-        { title: "Instagram", url: "/" },
-        { title: "Twitter", url: "/" },
+        { title: "Instagram", url: "https://www.instagram.com/stovakx/" },
+        { title: "Twitter", url: "https://twitter.com/stovakx" },
         { title: "Facebook", url: "/" },
       ],
     },

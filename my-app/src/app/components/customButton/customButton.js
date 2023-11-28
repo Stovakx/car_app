@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export default function CustomButton({ text, classStyle, handleClick, btnType }) {
+export default function CustomButton({ text, classStyle, handleClick, btnType, textStyle }) {
   return (
     <button
       disabled={false}
@@ -9,7 +9,7 @@ export default function CustomButton({ text, classStyle, handleClick, btnType })
       onClick={handleClick}
       className={`custom-btn ${classStyle}`}
     >
-      <span className="flex-1">{text}</span>
+      <span className={`flex-1 ${textStyle}`}>{text}</span>
     </button>
   );
 }
