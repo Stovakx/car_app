@@ -4,6 +4,9 @@ import CustomFilter from "./components/customFilter/customFilter";
 import SearchBar from "./components/searchBar/searchBar";
 import CarCard from "./components/carCard/carCard";
 import { fetchCars } from "./utils";
+import { fuels, yearsOfProduction } from "./constants";
+
+
 export default async function Home({searchParams}) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
@@ -25,8 +28,8 @@ export default async function Home({searchParams}) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title={"fuel"} />
-            <CustomFilter title={"year"} />
+            <CustomFilter title={"fuel"} options={fuels} />
+            <CustomFilter title={"year"} options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (<div className="home__cars-wrapper">
