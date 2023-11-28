@@ -2,13 +2,17 @@ import axios from "axios";
 
 export async function fetchCars({ manufacturer, year, model, limit, fuel }) {
   const headers = {
-    "X-RapidAPI-Key": "2cb54aabc3msh2c46baf7c6c489ap1ca6f4jsn244c05a3a30e",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+    'X-RapidAPI-Key': '2cb54aabc3msh2c46baf7c6c489ap1ca6f4jsn244c05a3a30e',
+    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
   };
+
+  const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
+
+  console.log("API URL:", url);
 
   const options = {
     method: "GET",
-    url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    url: url,
     contentType: "application/json",
     headers: headers,
   };
