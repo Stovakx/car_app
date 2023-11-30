@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from 'next/navigation'
 import React from 'react'
-import CustomButton from '../customButton/customButton';
+import CustomButton from '../customButton';
 import { updateSearchParams } from '@/app/utils';
 
 export default function ShowMore({pageNumber, isNext}) {

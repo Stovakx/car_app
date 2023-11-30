@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import CustomButton from "../customButton/customButton";
+import CustomButton from "../customButton";
 import { calculateCarRent } from "@/app/utils";
-import CardDetails from "../carDetails/carDetails";
+import CardDetails from "./carDetails";
 
 export default function CarCard({ car }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { footerLinks } from "../../constants/index.js";
+import { footerLinks } from "../constants/index.js";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -33,6 +33,7 @@ export default function Footer() {
                     key={link.title}
                     href={link.url}
                     className="text-gray-500"
+                    target="_blank"
                   >
                     {link.title}
                   </Link>
@@ -43,7 +44,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+      <div className="flex max-md:flex-col max-md:justify-center justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
         <p>@{year} CarHub. All rights reserved</p>
 
         <div className="footer__copyrights-link">

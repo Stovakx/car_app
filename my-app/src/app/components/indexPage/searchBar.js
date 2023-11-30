@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import SearchManuFacturer from "../searchManuFacturer/searchManuFacturer";
+import SearchManuFacturer from "./searchManuFacturer";
 import SearchIcon from "@mui/icons-material/Search";
 import DriveEtaOutlinedIcon from "@mui/icons-material/DriveEtaOutlined";
 

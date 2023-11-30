@@ -1,13 +1,13 @@
-import Hero from "./components/hero/hero";
-import CustomFilter from "./components/customFilter/customFilter";
-import SearchBar from "./components/searchBar/searchBar";
-import CarCard from "./components/carCard/carCard";
-import ShowMore from "./components/showMore/showMore";
+"use client"
+import Hero from "./components/hero";
+import CustomFilter from "./components/customFilter";
+import SearchBar from "./components/indexPage/searchBar";
+import CarCard from "./components/indexPage/carCard";
+import ShowMore from "./components/indexPage/showMore";
 import { fetchCars } from "./utils";
 import { fuels, yearsOfProduction } from "./constants";
 
 export default async function Home({ searchParams }) {
-
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
@@ -17,9 +17,29 @@ export default async function Home({ searchParams }) {
   });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
+  const handleScroll = () => {
+    const discoverElement = document.getElementById("discover");
+    if (discoverElement) {
+      discoverElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
-      <Hero />
+      <Hero
+        title={"Find, book or rent a car -- quickly and easily!"}
+        subtitle={
+          "Streamline your car rental experience with our effortless booking process."
+        }
+        btnText={"Explore Cars"}
+        handleClick={handleScroll}
+        imgSrc={"/hero.png"}
+        overlaycss={"hero__image-overlay"}
+        btnClass={"bg-blue-600 text-white rounded-full mt-10"}
+        imgContainerCss={"xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen"}
+      />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
@@ -34,11 +54,11 @@ export default async function Home({ searchParams }) {
         </div>
         {!isDataEmpty ? (
           <section>
-          <div className="home__cars-wrapper">
-            {allCars?.map((car) => (
-              <CarCard car={car} key={car.id} />
-            ))}
-          </div>
+            <div className="home__cars-wrapper">
+              {allCars?.map((car) => (
+                <CarCard car={car} key={car.id} />
+              ))}
+            </div>
             <ShowMore
               pageNumber={(searchParams.pageNumber || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}
