@@ -10,7 +10,7 @@ export default function AboutMain({aboutusText}) {
         <ShadowImage shadow={"opacity-25"}/>
       </div>
       <div className="lg:mt-8 mx-auto w-10/12 space-y-3">
-            <h3 className="text-3xl font-semibold">About us</h3>
+            <h3 className="text-2xl font-semibold">About us</h3>
             <p className="whitespace-pre-line text-lg">{aboutusText}</p>
       </div>
     </div>

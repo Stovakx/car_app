@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "../components/hero";
 import { aboutUs } from "../constants";
 import AboutHero from "../components/about/aboutHero";
 import AboutMain from "../components/about/aboutMain";

@@ -131,6 +131,21 @@ export const carBrands = [
   { name: "Skoda auto", src: "/carLogos/skoda.png" },
 ];
 
-export const dealershipLogos =[
-
+export const howItWorks = [
+  { 
+    headers: [
+    {text: "How it works?"},
+    { text: "Step 1." },
+    { text: "Step 2."},
+    {text: "Step 3."},
+    ],
+    paragraph:[
+      {text: "Lorem ipsum dolor adipisicing elit. Lorem ipsum sit amet consectetur,adipisicing elit. Lorem ipsum adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit."},
+      {text: "dicta excepturi vitae. Dolorum, recusandae tenetur."},
+      {text: "praesentium qui facilis dolor, Repudiandae quo ut est dolores voluptas voluptatem alias nam atque et totam"}
+    ],
+    images:[
+      
+    ]
+  }
 ];

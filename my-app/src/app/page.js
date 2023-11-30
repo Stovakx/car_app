@@ -6,6 +6,7 @@ import CarCard from "./components/indexPage/carCard";
 import ShowMore from "./components/indexPage/showMore";
 import { fetchCars } from "./utils";
 import { fuels, yearsOfProduction } from "./constants";
+import Newsletter from "./components/newsletter";
 
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
@@ -38,11 +39,13 @@ export default async function Home({ searchParams }) {
         imgSrc={"/hero.png"}
         overlaycss={"hero__image-overlay"}
         btnClass={"bg-blue-600 text-white rounded-full mt-10"}
-        imgContainerCss={"xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen"}
+        imgContainerCss={
+          "xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen"
+        }
       />
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+          <h1 className="text-4xl font-bold overflow-y-hidden">Car Catalogue</h1>
           <p>Explore the cars you might like</p>
         </div>
         <div className="home__filters">
@@ -70,6 +73,7 @@ export default async function Home({ searchParams }) {
           </div>
         )}
       </div>
+      <Newsletter />
     </>
   );
 }
